@@ -1,0 +1,144 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Twitter Clone</a>
+      <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right header-menu">
+        <li><a href="/users"><i class="fa fa-users"></i><span>Users</span></a></li>
+        <li><a href="/users/nazar"><i class="fa fa-user"></i><span>Profile</span></a></li>
+        <li><a href="/tweets"><i class="fa fa-comment"></i><span>All tweets</span></a></li>
+        <li><a href="/users/nazar/edit"><i class="fa fa-cog"></i><span>Setting</span></a></li>
+        <li><a rel="nofollow" data-method="delete" href="/signout"><i class="fa fa-sign-out"></i><span>Sign out</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <aside class="col-md-4">
+      <section>
+        <div class="profile clearfix">
+          <a href="/users/nazar">
+            <img alt="Nazar Taran" class="gravatar" src="https://secure.gravatar.com/avatar/307a99b1eff78a2ca24d7c4097712f75?s=52">
+          </a>
+          <div>
+            <a href="/users/nazar">Nazar Taran</a>
+          </div>
+          <div>bla@mail.com</div>
+        </div>
+        <div class="stats">
+          <table>
+            <tbody>
+              <tr>
+                <th>Tweets</th>
+                <th>Followings</th>
+                <th>Followers</th>
+              </tr>
+              <tr>
+                <td><a href="/users/nazar">5</a></td>
+                <td><a href="/users/nazar/following">0</a></td>
+                <td><a href="/users/nazar/followers">0</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tweet-box">
+          <form class="new_tweet" id="new_tweet" action="" accept-charset="UTF-8" method="post">
+            <div class="field">
+              <textarea placeholder="Compose new Tweet..." name="tweet[content]" id="tweet_content"></textarea>
+            </div>
+            <input type="submit" name="commit" value="Post" class="btn btn-large btn-primary" data-disable-with="Post">
+          </form>
+        </div>
+      </section>
+    </aside>
+
+    <div class="col-md-8">
+      <div class="timeline">
+        <h2 class="title">Tweets</h2>
+        <ol class="tweets">
+          <li class="tweet clearfix" id="5">
+            <a href="/users/nazar"><img alt="Nazar Taran" class="gravatar" src="https://secure.gravatar.com/avatar/307a99b1eff78a2ca24d7c4097712f75?s=50"></a>
+            <div class="content">
+              <div class="user">
+                <a href="/users/nazar">Nazar Taran</a>
+              </div>
+              <div class="tweet-content">My fifth tweet!</div>
+              <div class="tweet-footer">
+                <posted>less than a minute ago.</posted>
+                <div class="tweet-actions">
+                  <a data-confirm="You sure?" title="My fifth tweet!" rel="nofollow" data-method="delete" href="/tweets/5">delete</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tweet clearfix" id="4">
+            <a href="/users/nazar"><img alt="Nazar Taran" class="gravatar" src="https://secure.gravatar.com/avatar/307a99b1eff78a2ca24d7c4097712f75?s=50"></a>
+            <div class="content">
+              <div class="user">
+                <a href="/users/nazar">Nazar Taran</a>
+              </div>
+              <div class="tweet-content">My fourth tweet!</div>
+              <div class="tweet-footer">
+                <posted>less than a minute ago.</posted>
+                <div class="tweet-actions">
+                  <a data-confirm="You sure?" title="My fourth tweet!" rel="nofollow" data-method="delete" href="/tweets/4">delete</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tweet clearfix" id="3">
+            <a href="/users/nazar"><img alt="Nazar Taran" class="gravatar" src="https://secure.gravatar.com/avatar/307a99b1eff78a2ca24d7c4097712f75?s=50"></a>
+            <div class="content">
+              <div class="user">
+                <a href="/users/nazar">Nazar Taran</a>
+              </div>
+              <div class="tweet-content">My third tweet!</div>
+              <div class="tweet-footer">
+                <posted>less than a minute ago.</posted>
+                <div class="tweet-actions">
+                  <a data-confirm="You sure?" title="My third tweet!" rel="nofollow" data-method="delete" href="/tweets/3">delete</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tweet clearfix" id="2">
+            <a href="/users/nazar"><img alt="Nazar Taran" class="gravatar" src="https://secure.gravatar.com/avatar/307a99b1eff78a2ca24d7c4097712f75?s=50"></a>
+            <div class="content">
+              <div class="user">
+                <a href="/users/nazar">Nazar Taran</a>
+              </div>
+              <div class="tweet-content">My second tweet!</div>
+              <div class="tweet-footer">
+                <posted>less than a minute ago.</posted>
+                <div class="tweet-actions">
+                  <a data-confirm="You sure?" title="My second tweet!" rel="nofollow" data-method="delete" href="/tweets/2">delete</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="tweet clearfix" id="1">
+            <a href="/users/nazar"><img alt="Nazar Taran" class="gravatar" src="https://secure.gravatar.com/avatar/307a99b1eff78a2ca24d7c4097712f75?s=50"></a>
+            <div class="content">
+              <div class="user">
+                <a href="/users/nazar">Nazar Taran</a>
+              </div>
+              <div class="tweet-content">My first tweet!</div>
+              <div class="tweet-footer">
+                <posted>less than a minute ago.</posted>
+                <div class="tweet-actions">
+                  <a data-confirm="You sure?" title="My first tweet!" rel="nofollow" data-method="delete" href="/tweets/1">delete</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
