@@ -1,0 +1,22 @@
+<div class="timeline">
+  <h2 class="title">Tweets</h2>
+  <ol class="tweets">
+    <% tweets.order(created_at: :desc).each do |tweet|%>
+      <li class="tweet clearfix">
+        <%= render 'partials/button_delete', user: user, tweet: tweet %>
+              <%= have_avatar(tweet.user, '52x52')%>
+        <div class="content">
+          <div class="user"><%= user_name(tweet.user)%></div>
+          <div class="tweet-content"><%= tweet.text%></div>
+          <div class="tweet-footer">
+            <posted><%= time_ago_in_words(tweet.updated_at) %></posted>
+          </div>
+        </div>
+      </li>
+    <%end%>
+
+
+    <%= will_paginate tweets, renderer: BootstrapPagination::Rails %>
+
+  </ol>
+</div>

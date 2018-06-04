@@ -21,11 +21,11 @@
       <section>
 
         <div class="profile clearfix">
-          <%= link_to  image_tag(current_user.avatar.url), edit_user_path(id: current_user.id) %>
+          <%= image_tag(@user.avatar.url) %>
           <div>
-            <%= "#{current_user.first_name} #{current_user.last_name}" %>
+            <%= "#{@user.first_name} #{@user.last_name}" %>
           </div>
-          <div><%= current_user.email %></div>
+          <div><%= @user.email %></div>
         </div>
 
         <div class="stats">
@@ -37,22 +37,27 @@
                 <th>Followers</th>
               </tr>
               <tr>
-                <td><%= current_user.tweets.count %></td>
-                <td><%= link_to current_user.following.count, following_user_path(current_user) %></td>
-                <td><%= link_to current_user.followers.count, followers_user_path(current_user) %></td>
+                <td><%= @user.tweets.count %></td>
+                <td><%= link_to @user.following.count, following_user_path %></a></td>
+                <td><%= link_to @user.followers.count, followers_user_path %></a></td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="tweet-box">
-          <%= form_for @tweet do |form| %>
+        <div class="tweet-actions">
 
-            <%= form.label :text %>
-            <%= form.text_field :text, class: 'form-control' %>
-            <%= form.submit class: 'btn btn-success' %>
-         <% end %>
-        </div>
+        <% if @user != current_user %>
+          <div id="follow_form">
+            <% if current_user.following?(@user) %>
+              <%= render 'unfollow' %>
+            <% else %>
+              <%= render 'follow' %>
+            <% end %>
+              </div>
+        <% end %>
+
+
       </section>
     </aside>
     <div class="col-md-8">
@@ -60,13 +65,12 @@
         <h2 class="title">Tweets</h2>
 
         <div class="tweets">
-                 <% current_user.tweets.each do |tweet| %>
+                 <% @user.tweets.each do |tweet| %>
                     <li class="tweet clearfix" >
-                                  <%=  image_tag(current_user.avatar.url(:thumb))%>
+                                  <%=  image_tag(@user.avatar.url(:thumb))%>
                                   <%= "#{tweet.user.first_name} #{tweet.user.last_name}" %>
                                   <%= tweet.text %>
                                   <small class="text-muted">Last updated <%= time_ago_in_words(tweet.updated_at) %> ago</small>
-                                  <%= link_to "delete", tweet_path(id: tweet.id), :method => :delete, :class => "delete", :confirm => "Are you sure ?"%>
 
                     </li>
                   <% end %>

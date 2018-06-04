@@ -1,0 +1,30 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= image_tag(@user.avatar.url, alt: 'Avatar', width: '100', heigth: '100', class: 'img-circle') if @user.avatar? %>
+      <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
+    </section>
+    <section class="stats">
+
+      <% if @users.any? %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <%= link_to image_tag(user.avatar.url, alt: 'Avatar', size: '50', class: 'img-circle'), user if user.avatar? %>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users follow">
+        <% @users.each do |user| %>
+          <%= link_to image_tag(user.avatar.url, alt: 'Avatar', size: '50', class: 'img-circle'), user if user.avatar? %>
+          <%= "#{user.first_name} #{user.last_name}" %></br>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>

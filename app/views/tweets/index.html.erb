@@ -1,0 +1,18 @@
+<center><h1>Tweets</h1>
+<div class="tweet-content">
+  <% @tweets.each do |tweet| %>
+    <div class="d-inline-block bg-warning">
+      <%= image_tag(tweet.user.avatar.url, alt: 'Avatar', width: '100', heigth: '100', class: 'img-circle') if tweet.user.avatar? %>
+    </div>
+    <div class="d-inline-block bg-warning">
+      <strong><%= link_to "#{tweet.user.first_name} #{tweet.user.last_name}", tweet.user %></strong>
+      Post: <%= tweet.text %>
+      <div class="tweet-footer">
+        <posted><%= time_ago_in_words(tweet.created_at) %> ago.</posted>
+      </div>
+
+    </div>
+  <% end %>
+</div>
+<%= will_paginate @tweets, previous_label: h("<"), next_label: h(">") %>
+</center>
